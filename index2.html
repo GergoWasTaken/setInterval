@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Digitális Edzőóra</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -41,7 +41,6 @@
                     <h3>Edzés időzítő</h3>
                     <div id="edzes_display">
                         <p>Felkészülés...</p>
-                        <p>Következő: 10 másodperc pihenő</p>
                     </div>
                     <div id="idozito_display">
                         <p>00:30</p>
@@ -64,27 +63,6 @@
                 
                 <div id="szinvaltas">
                     <h3>Színváltoztató háttér</h3>
-                    <div class="color-wheel">
-                        <div class="color-dot" style="background: linear-gradient(135deg, #1e5a9e 0%, #2d7fb5 100%); --angle: 0deg;" data-color="#1e5a9e" title="Kék 1"></div>
-                        <div class="color-dot" style="background: linear-gradient(135deg, #4fa3e8 0%, #3d8dc9 100%); --angle: 60deg;" data-color="#4fa3e8" title="Kék 2"></div>
-                        <div class="color-dot" style="background: linear-gradient(135deg, #2d7fb5 0%, #4fa3e8 100%); --angle: 120deg;" data-color="#2d7fb5" title="Kék 3"></div>
-                        <div class="color-dot" style="background: linear-gradient(135deg, #3d8dc9 0%, #5aaeef 100%); --angle: 180deg;" data-color="#3d8dc9" title="Kék 4"></div>
-                        <div class="color-dot" style="background: linear-gradient(135deg, #1e5a9e 0%, #3d7fb8 100%); --angle: 240deg;" data-color="#1e5a9e" title="Kék 5"></div>
-                        <div class="color-dot" style="background: linear-gradient(135deg, #2d7fb5 0%, #4fa3e8 100%); --angle: 300deg;" data-color="#2d7fb5" title="Kék 6"></div>
-                    </div>
-                    
-                    
-                    <div style="margin-top: 10px;">
-                        <label style="display:block; margin-bottom:8px;">Váltás gyakorisága (másodperc):
-                            <input type="number" id="szin_intervallum_input" min="1" max="5" value="1" style="margin-left:8px; width:60px;">
-                        </label>
-                        <div class="button-group">
-                            <button type="button" id="szin_inditas_btn" disabled>Színváltás indítása</button>
-                            <button type="button" id="szin_stop_btn" disabled>Stop</button>
-                            <button type="button" id="szin_kovetkezo_btn" disabled>Váltás most</button>
-                        </div>
-                    </div>
-
                     <div style="margin-top: 25px;">
                         <p style="margin: 10px 0;">Szín témák:</p>
                         <div class="tema-gombok">
@@ -102,7 +80,6 @@
             </div>
             <div id="aktiv_fuggvenyek">
                 <h3>Aktív setInterval() függvények</h3>
-                <p>Nincs aktív időzítő</p>
             </div>
         </div>
     </main>

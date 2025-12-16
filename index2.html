@@ -49,15 +49,21 @@
                     <div class="button-group">
                         <button type="button" id="edzes_start">Edzés indítása</button>
                         <button type="button" id="edzes_stop">Szünet</button>
+                        <button type="button" id="edzes_skip">Tovább</button>
                     </div>
                     <button type="button" id="edzes_reset">Újrakezdés</button>
-                    <p>Válassz egy edzést és indítsd el!</p>
+                    <div style="margin-top: 15px;">
+                        <p style="margin: 0 0 8px 0;">Válassz egy edzést:</p>
+                        <select id="edzes_valasztas">
+                            <option value="0">Alapszintű edzés</option>
+                            <option value="1">Közepes edzés</option>
+                            <option value="2">Haladó edzés</option>
+                        </select>
+                    </div>
                 </div>
                 
                 <div id="szinvaltas">
                     <h3>Színváltoztató háttér</h3>
-                    <p>Válaszd ki a szín kombinációt és indítsd el!</p>
-                    
                     <div class="color-wheel">
                         <div class="color-dot" style="background: linear-gradient(135deg, #1e5a9e 0%, #2d7fb5 100%); --angle: 0deg;" data-color="#1e5a9e" title="Kék 1"></div>
                         <div class="color-dot" style="background: linear-gradient(135deg, #4fa3e8 0%, #3d8dc9 100%); --angle: 60deg;" data-color="#4fa3e8" title="Kék 2"></div>
@@ -67,14 +73,31 @@
                         <div class="color-dot" style="background: linear-gradient(135deg, #2d7fb5 0%, #4fa3e8 100%); --angle: 300deg;" data-color="#2d7fb5" title="Kék 6"></div>
                     </div>
                     
-                    <div style="margin-top: 25px;">
-                        <p style="margin: 10px 0;">Színváltás időköze:</p>
-                        <select id="idozito_ido">
-                            <option value="1000">1 másodperc</option>
-                            <option value="2000">2 másodperc</option>
-                            <option value="3000">3 másodperc</option>
-                        </select>
+                    
+                    <div style="margin-top: 10px;">
+                        <label style="display:block; margin-bottom:8px;">Váltás gyakorisága (másodperc):
+                            <input type="number" id="szin_intervallum_input" min="1" max="5" value="1" style="margin-left:8px; width:60px;">
+                        </label>
+                        <div class="button-group">
+                            <button type="button" id="szin_inditas_btn" disabled>Színváltás indítása</button>
+                            <button type="button" id="szin_stop_btn" disabled>Stop</button>
+                            <button type="button" id="szin_kovetkezo_btn" disabled>Váltás most</button>
+                        </div>
                     </div>
+
+                    <div style="margin-top: 25px;">
+                        <p style="margin: 10px 0;">Szín témák:</p>
+                        <div class="tema-gombok">
+                            <button class="tema-gomb" id="tema_kek" data-tema="kek" style="background: linear-gradient(135deg, #0a0f1f 0%, #0d1428 100%);">Kék</button>
+                            <button class="tema-gomb" id="tema_lila" data-tema="lila" style="background: linear-gradient(135deg, #1a0f2e 0%, #2d1b4e 100%);">Lila</button>
+                            <button class="tema-gomb" id="tema_zold" data-tema="zold" style="background: linear-gradient(135deg, #0f2e1a 0%, #1b4e2d 100%);">Zöld</button>
+                            <button class="tema-gomb" id="tema_piros" data-tema="piros" style="background: linear-gradient(135deg, #2e0f0f 0%, #4e1b1b 100%);">Piros</button>
+                            <button class="tema-gomb" id="tema_narancs" data-tema="narancs" style="background: linear-gradient(135deg, #2e1a0f 0%, #4e2d1b 100%);">Narancssárga</button>
+                            <button class="tema-gomb" id="tema_roza" data-tema="roza" style="background: linear-gradient(135deg, #2e0f2a 0%, #4e1b47 100%);">Rózsaszín</button>
+                        </div>
+                    </div>
+
+                    
                 </div>
             </div>
             <div id="aktiv_fuggvenyek">
@@ -83,5 +106,6 @@
             </div>
         </div>
     </main>
+<script src="script.js"></script>
 </body>
 </html>

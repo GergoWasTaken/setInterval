@@ -1,19 +1,508 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0a0f1f 0%, #0d1428 100%);
+    color: #b8c9d9;
+    min-height: 100vh;
 }
 
 main {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 25px 15px;
+}
+
+.container {
+    width: 100%;
+}
+
+.sections-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 25px;
 }
 
 h1 {
+    text-align: center; 
+    color: #4fa3e8;
+    font-size: 2em;
+    margin: 0 0 8px 0;
+    text-shadow: 0 0 20px rgba(79, 163, 232, 0.4);
+}
+
+h3 {
+    color: #4fa3e8;
+    border-bottom: 2px solid #4fa3e8;
+    padding-bottom: 8px;
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 1.1em;
+}
+
+#cim {
     text-align: center;
-    color: #333;
+    background: linear-gradient(135deg, rgba(79, 163, 232, 0.08) 0%, rgba(99, 179, 237, 0.08) 100%);
+    padding: 20px;
+    border-radius: 15px;
+    border: 2px solid #2d5a8c;
+    margin-bottom: 25px;
+    box-shadow: 0 0 20px rgba(79, 163, 232, 0.1);
+}
+
+#cim p {
+    color: #8fa5b8;
+    margin: 8px 0 0 0;
+    font-size: 0.9em;
+}
+
+#visszaszamlalo, #idozito, #szinvaltas {
+    border-radius: 12px;
+    padding: 18px;
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.2);
+    font-size: 0.95em;
+}
+
+#visszaszamlalo {
+    background: linear-gradient(135deg, rgba(79, 163, 232, 0.08) 0%, rgba(99, 179, 237, 0.08) 100%);
+    border: 2px solid #1e5a9e;
+}
+
+#idozito {
+    border: 2px solid #1e5a9e;
+    background: linear-gradient(135deg, rgba(79, 163, 232, 0.08) 0%, rgba(99, 179, 237, 0.08) 100%);
+    box-shadow: 0 0 15px rgba(79, 163, 232, 0.08);
+}
+
+#szinvaltas {
+    border: 2px solid #1e5a9e;
+    background: linear-gradient(135deg, rgba(79, 163, 232, 0.08) 0%, rgba(99, 179, 237, 0.08) 100%);
+    box-shadow: 0 0 15px rgba(79, 163, 232, 0.08);
+}
+input[type="number"], select {
+    background-color: #0d1428;
+    border: 2px solid #1e5a9e;
+    color: #4fa3e8;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 0.9em;
+    margin: 4px;
+    transition: all 0.3s ease;
+}
+
+input[type="number"]:focus, select:focus {
+    outline: none;
+    border-color: #4fa3e8;
+    box-shadow: 0 0 10px rgba(79, 163, 232, 0.4);
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.input-field {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-field label {
+    color: #8fa5b8;
+    font-size: 0.85em;
+    margin-bottom: 4px;
+    font-weight: 500;
+}
+
+.input-field input {
+    width: 100%;
+}
+
+#visszaszamlalo_display, #idozito_display, #edzes_display {
+    background-color: #050a14;
+    border: 3px solid #3d7fb8;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 15px 0;
+    text-align: center;
+    box-shadow: inset 0 0 15px rgba(79, 163, 232, 0.1);
+}
+
+#idozito_display {
+    border-color: #3d7fb8;
+}
+
+#visszaszamlalo_display p, #idozito_display p, #edzes_display p {
+    color: #3d7fb8;
+    font-size: 1.8em;
+    font-weight: bold;
+    margin: 5px 0;
+    text-shadow: 0 0 10px rgba(79, 163, 232, 0.3);
+    line-height: 1.3;
+}
+
+#edzes_display p:last-child {
+    font-size: 0.9em;
+    font-style: italic;
+    color: #5a8cb8;
+    font-weight: normal;
+    text-shadow: none;
+}
+button {
+    padding: 8px 16px;
+    margin: 5px 3px;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.85em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    display: inline-block;
+}
+
+#visszaszamlalo, #idozito, #szinvaltas {
+    display: flex;
+    flex-direction: column;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin: 5px 0;
+}
+
+#reset, #edzes_reset {
+    display: block;
+    margin: 5px auto;
+}
+
+
+#start, #edzes_start {
+    background: linear-gradient(135deg, #4fa3e8 0%, #3d8dc9 100%);
+    color: #000;
+}
+
+#start:hover, #edzes_start:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(79, 163, 232, 0.4);
+}
+
+#stop, #edzes_stop {
+    background: linear-gradient(135deg, #4fa3e8 0%, #3d8dc9 100%);
+    color: #000;
+}
+
+#stop:hover, #edzes_stop:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(79, 163, 232, 0.4);
+}
+
+#reset, #edzes_reset {
+    background: linear-gradient(135deg, #2d7fb5 0%, #1e5a9e 100%);
+    color: #fff;
+}
+
+#reset:hover, #edzes_reset:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(79, 163, 232, 0.3);
+}
+
+#szinek {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+#szin1, #szin2, #szin3, #szin4, #szin5, #szin6 {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 3px solid #4fa3e8;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(79, 163, 232, 0.2);
+}
+
+#szin1 {
+    background: linear-gradient(135deg, #1e5a9e 0%, #2d7fb5 100%);
+}
+
+#szin2 {
+    background: linear-gradient(135deg, #4fa3e8 0%, #3d8dc9 100%);
+}
+
+#szin3 {
+    background: linear-gradient(135deg, #2d7fb5 0%, #4fa3e8 100%);
+}
+
+#szin4 {
+    background: linear-gradient(135deg, #3d8dc9 0%, #5aaeef 100%);
+}
+
+#szin5 {
+    background: linear-gradient(135deg, #1e5a9e 0%, #3d7fb8 100%);
+}
+
+#szin6 {
+    background: linear-gradient(135deg, #2d7fb5 0%, #4fa3e8 100%);
+}
+
+#szin1:hover, #szin2:hover, #szin3:hover, #szin4:hover, #szin5:hover, #szin6:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px rgba(79, 163, 232, 0.4);
+}
+#aktiv_fuggvenyek {
+    background: linear-gradient(135deg, rgba(79, 163, 232, 0.08) 0%, rgba(99, 179, 237, 0.08) 100%);
+    border: 2px solid #1e5a9e;
+    border-radius: 12px;
+    padding: 18px;
+    margin-top: 25px;
+    box-shadow: 0 0 15px rgba(79, 163, 232, 0.08);
+}
+
+#aktiv_fuggvenyek h3 {
+    color: #4fa3e8;
+    border-color: #4fa3e8;
+}
+
+#aktiv_fuggvenyek p {
+    color: #3d8dc9;
+    font-weight: bold;
+    margin: 8px 0;
+.szin-combo {
+    padding: 10px;
+    border-radius: 8px;
+    margin: 7px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.szin-combo:hover {
+    transform: translateX(5px);
+    border-color: rgba(79, 163, 232, 0.3);
+}
+
+.szin-circle-small {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.szin-name {
+    color: #b8c9d9;
+    font-size: 0.85em;
+    font-weight: 500;
+}
+
+.color-wheel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 250px;
+    height: 250px;
+    margin: 25px auto;
+}
+
+.color-dot {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 4px solid #000;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+}
+
+.color-dot[style*="--angle: 0deg"] {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.color-dot[style*="--angle: 60deg"] {
+    top: 25%;
+    right: 0;
+    transform: translate(25%, -50%);
+}
+
+.color-dot[style*="--angle: 120deg"] {
+    bottom: 25%;
+    right: 0;
+    transform: translate(25%, 50%);
+}
+
+.color-dot[style*="--angle: 180deg"] {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.color-dot[style*="--angle: 240deg"] {
+    bottom: 25%;
+    left: 0;
+    transform: translate(-25%, 50%);
+}
+
+.color-dot[style*="--angle: 300deg"] {
+    top: 25%;
+    left: 0;
+    transform: translate(-25%, -50%);
+}
+
+.color-dot:hover {
+    transform-origin: center;
+    box-shadow: 0 0 20px rgba(79, 163, 232, 0.6);
+    border-color: #4fa3e8;
+}
+
+/* Tablet view - 768px */
+@media (max-width: 1024px) {
+    main {
+        padding: 20px 12px;
+    }
+    
+    h1 {
+        font-size: 1.7em;
+    }
+    
+    .sections-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+    }
+    
+    #visszaszamlalo, #idozito, #szinvaltas {
+        padding: 15px;
+        font-size: 0.9em;
+    }
+}
+
+    @media (max-width: 768px) {
+    main {
+        padding: 15px 10px;
+    }
+    
+    h1 {
+        font-size: 1.5em;
+        margin-bottom: 5px;
+    }
+    
+    h3 {
+        font-size: 1em;
+        margin-bottom: 10px;
+    }
+    
+    .sections-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    #visszaszamlalo, #idozito, #szinvaltas {
+        padding: 12px;
+        font-size: 0.9em;
+    }
+    
+    #visszaszamlalo_display, #idozito_display, #edzes_display {
+        padding: 12px;
+        margin: 10px 0;
+    }
+    
+    #visszaszamlalo_display p, #idozito_display p, #edzes_display p {
+        font-size: 1.3em;
+    }
+    
+    #edzes_display p:last-child {
+        font-size: 0.75em;
+    }
+    
+    button {
+        padding: 7px 14px;
+        margin: 4px 2px;
+        font-size: 0.8em;
+    }
+    
+    input[type="number"], select {
+        padding: 5px 8px;
+        font-size: 0.85em;
+    }
+    
+    .szin-combo {
+        padding: 8px;
+        margin: 5px 0;
+    }
+    
+    .szin-circle-small {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .szin-name {
+        font-size: 0.8em;
+    }
+}
+
+/* Small phone view - 480px and below */
+@media (max-width: 480px) {
+    main {
+        padding: 12px 8px;
+    }
+    
+    h1 {
+        font-size: 1.3em;
+    }
+    
+    h3 {
+        font-size: 0.95em;
+        padding-bottom: 6px;
+        margin-bottom: 8px;
+    }
+    
+    .sections-grid {
+        gap: 10px;
+    }
+    
+    #visszaszamlalo, #idozito, #szinvaltas {
+        padding: 10px;
+    }
+    
+    #visszaszamlalo_display, #idozito_display, #edzes_display {
+        padding: 10px;
+        margin: 8px 0;
+    }
+    
+    #visszaszamlalo_display p, #idozito_display p, #edzes_display p {
+        font-size: 1.2em;
+    }
+    
+    #edzes_display p:last-child {
+        font-size: 0.7em;
+    }
+    
+    button {
+        padding: 6px 12px;
+        margin: 3px 2px;
+        font-size: 0.75em;
+    }
+}
+
+
 }

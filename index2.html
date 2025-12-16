@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div id="cim">
+                <h1>Digitális Edzőóra</h1>
+                <p>setInterval() és clearInterval() gyakorlása - Nincs API használat</p>
+            </div>
+            <div id="visszaszamlalo">
+                <h3>Visszaszámláló időzítő</h3>
+                <hr>
+                Percek:
+                <input type="number" id="perc" min="0" max="59" value="0">
+                Másodpercek:
+                <input type="number" id="mp" min="0" max="59" value="0">
+                <div id="visszaszamlalo_display">
+                    <p>0:00</p>
+                </div>
+                <button type="button" id="start">Indítás</button>
+                <button type="button" id="stop">Szünet</button>
+                <button type="button" id="reset">Alaphelyzet</button>
+                <p>Készen áll a visszaszámlálásra</p>
+            </div>
+            <div id="idozito">
+                <h3>Edzés időzítő</h3>
+                <hr>
+                <div id="edzes_display">
+                    <p>Felkészülés...</p>
+                    <p>Következő: 10 másodperc pihenő</p>
+                </div>
+                <div id="idozito_display">
+                    <p>00:30</p>
+                </div>
+                <div>
+                    valami fekete geci
+                </div>
+                <button type="button" id="edzes_start">Edzés indítása</button>
+                <button type="button" id="edzes_stop">Szünet</button>
+                <button type="button" id="edzes_reset">Újrakezdés</button>
+
+                <p>Válassz egy edzést és indítsd el!</p>
+            </div>
+            <div id="szinvaltas">
+                <h3>Színváltoztató háttér</h3>
+                <hr>
+                Válaszd ki a színeket és az időközt, majd indítsd el a színváltást!
+            </div>
+            <div id="szinek">
+                <div id="szin1"></div> 
+                <div id="szin2"></div>
+                <div id="szin3"></div>
+                <div id="szin4"></div>
+                <div id="szin5"></div>
+                <div id="szin6"></div>
+            </div>
+            <div>
+                <p>Színváltás időköze:</p>
+                <select id="idozito_ido">
+                    <option value="1000">1 másodperc</option>
+                    <option value="2000">2 másodperc</option>
+                    <option value="3000">3 másodperc</option>
+                </select>
+            </div>
+            <div id="aktiv_fuggvenyek">
+                <h3>Aktív setInterval() függvények</h3>
+                <p>Nincs aktív időzítő</p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

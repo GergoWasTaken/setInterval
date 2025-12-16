@@ -6,17 +6,29 @@
     <title>Digitális Edzőóra</title>
 </head>
 <body>
-    <form>
-        <input type="number" id="perc">
-        <input type="number" id="mp">
+</main>
 
-        <button type="button">
+    <section>
+        <h2>Visszaszámláló </h2>
+        <label>Perc: <input type="number" id="perc" min="0" value="0"></label>
+        <label>Másodperc: <input type="number" id="mp" min="0" max="59" value="0"></label>
+        <div>
+            <button id="indit">Indítás</button>
+            <button id="megallit">Szünet</button>
+            <button id="visszaallit">Visszaállít</button>
+        </div>
+        <h1 id="ideIr1">00:00</h1>
+    </section>
 
-        </button>
-    </form>
-    <div id="ideIr">
-        <h1 id="idozito">00:00</h1>
-    </div>
+    <section>
+        <h2>Stopper</h2>
+        <div>
+            <button id="inditStopper">Indítás</button>
+            <button id="megallitStopper">Szünet</button>
+            <button id="visszaallitStopper">Visszaállít</button>
+        </div>
+        <h1 id="ideIr2">00:00.00</h1>
+    </section>
 
 <script src="js.js"></script>
 </body>
